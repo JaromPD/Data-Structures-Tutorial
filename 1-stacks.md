@@ -18,9 +18,11 @@ Earlier I said that Stacks are an extremely important tool for every developer t
 **The Back Button**
 
 The first and most common examples of stacks are back buttons! Whether its in you web browser or just on your phone back buttons need to use stacks, and it makes sense when you think about. Every time you open a new window or application it is added to a stack so when you want to go back, it simply returns to the last windows or application in the stack.
+
 **The Call Stack**
 
 The call stack is another great example, especially since you've probably used it before in your own programming! Essentially the call stack keeps track of whatever function your program is running. This is important for nested functions, because when one ends we must go back into the one the called it and continue. This is also very similar to the next and final example...
+
 **Recursion**
 
 When we make recursive fictions we are in fact making a stack! This is very similar to The Call Stack because it is a stack of functions, they're just all the same function. This stack is what allows recursive functions to work. Without them being in a stack the functions would never be able to go back to their last iteration and complete the task at hand!
