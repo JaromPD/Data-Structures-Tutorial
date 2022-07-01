@@ -37,6 +37,7 @@ Then to add item to the stack we simply need to append the to the list with appe
 ```stack.append('A')```
 
 Lastly to remove the last item from the stack, we use pop().
+
 ```stack.pop()```
 
 To get the value of the item and remove it, you simply need to set the pop to a variable.
