@@ -29,11 +29,16 @@ When we make recursive fictions we are in fact making a stack! This is very simi
 
 # Python Operations
 Alright now that we've covered what a stack is an how it work, we need to talk about how to implement one into your Python Code. Usually this will start with a empty list which will become your stack. 
+
 ```stack = []```
+
 Then to add item to the stack we simply need to append the to the list with append().
+
 ```stack.append('A')```
+
 Lastly to remove the last item from the stack, we use pop().
 ```stack.pop()```
+
 To get the value of the item and remove it, you simply need to set the pop to a variable.
 ```removed_last_item = stack.pop()```
 
