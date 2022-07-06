@@ -13,6 +13,7 @@
 * Introduction
 * Common Uses of Linked Lists
 * Components of a Linked List
+* Operations of a Linked List
 * Creating a Linked List
 * Example
 * Problem to Solve
