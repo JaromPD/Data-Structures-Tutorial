@@ -59,10 +59,18 @@ stack.pop() # B is removed
 stack.append("B") # B is added
 stack.append("C") # C is added
 ```
-Also be sure to remember that, as is usual with programming, there a many more ways to implement a queue, including using a linked list instead of a regualr list! However for this tutorial will will just be learning the basics and this is the most basic way to implement a stack.
+Also be sure to remember that, as is usual with programming, there a many more ways to implement a stack, including using a linked list instead of a regualr list! However for this tutorial will will just be learning the basics and this is the most basic way to implement a stack.
 #  Code Example
-As an example I have created a simple console shopping list program below. This program allows a user to add an item to a shopping list, and if a mistake is made they are also given an undo option to remove the last item.
 
+For an example, I've created the shopping list program below. The requirements of the program are listed below.
+
+**The Program Must**
+* Loop through a menu.
+* Allow users to add items to a stack.
+* Allow users to undo the last addition.
+* Have an option to quit.
+
+Be sure to pay attention to the use of the stack operations we talked about above!
 ```python
 
 def main():
