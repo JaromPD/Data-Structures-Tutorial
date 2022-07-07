@@ -110,16 +110,17 @@ if __name__ == "__main__":
     main()
 ```
 # Problem To Solve
-**Stack Reversing Program Description**
+**Navigate Home Program**
 
-The list reversing program is a simple program with the sole purpose of creating a stack  of words and being able to reverse it using the stack operations we talked about above.
+The navigate home program is a simple program that finds a set of directions to navigate someone home based on the directions they took to get there. The program will add a location to a stack everytime it is reached and then when it is time to return home, the program will reverse the order of those locations in order to lead the user home. In a real program there would also be a system to track the user's location, but for this program we will simply have the enter it.
 
 The program will need to be able to:
-* Display a menu with options to add, reverse, and quit.
-* Display the current stack.
-* Add items to a stack using append.
+* Display a menu with options to add a location, undo the last location, take the user home, and quit
+* Loop the menu until  the user quits or selects the take home option.
+* Take user input for locations
+* Add locations to a stack using append.
 * Undo the last addition.
 * Reverse the stack using pop.
-* Display the reversed stack.
+* Display the reversed stack to take them home.
 
 This program can be designed in many different ways. [This solution](https://github.com/JaromPD/Data-Structures-Tutorial/blob/main/word-reverser.py) is just one of many. As long as it uses the pop and append methods in a similar way it is most likely done correctly!
