@@ -206,7 +206,7 @@ def replace(self, old_value, new_value):
 ```
 And since we've been iterating through the list so much, we might as well create a iteration method for it. This will allow us to use the for __ in __ loop like python's built in lists.
 
-All this method does is iterate through the list like before, except it yileds the node's data at every iteration and will never stop until it reaches the end of the list.
+All this method does is iterate through the list like before, except it yields the node's data at every iteration and will never stop until it reaches the end of the list.
 ```python
 def __iter__(self):
 	curr = self.head
