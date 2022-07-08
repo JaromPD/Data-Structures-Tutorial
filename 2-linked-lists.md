@@ -112,7 +112,7 @@ Now that we have the insert_head method created, we must also create insert_tail
 ```python
 new_node = LinkedList.Node(value)
 
-if self.tail is None
+if self.tail is None:
 	self.head = new_node
 	self.tail = new_node
 else:
