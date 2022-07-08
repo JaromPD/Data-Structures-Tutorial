@@ -199,7 +199,7 @@ Another useful method for our linked list is the replace method which will allow
 replace will iterate with the same while loop as insert_after and remove. The difference is that when the value is found it is replaced.
 ```python
 def replace(self, old_value, new_value):
-	curr_value = self.head
+	curr = self.head
 	while curr is not None:
 		if curr.data == old_value:
 			curr.data = new_value
@@ -313,3 +313,16 @@ if __name__ == "__main__":
     main()
 ```
 # Problem to Solve
+**Music Ranker**
+On your own try to create a music ranking program. This program will allow a user to create a list of songs. The user can choose where to add a song in the list, as well as songs to remove. The music ranker program should make use of the Linked List class, which I put together for your use [here](https://github.com/JaromPD/Data-Structures-Tutorial/blob/main/LinkedList.py).
+
+**The Program Must**
+* Display a menu to Add, Remove, and View Songs
+* Display a secondary menu to ask where to add the song.
+* The user must be able to add a song:
+1. at the beginning of the list
+2. at the end of the list
+3. after a specified song
+* The user must be able to view an ordered list of songs in both menus.
+
+Once you have created your own program, feel free to check your solution with [mine]()
