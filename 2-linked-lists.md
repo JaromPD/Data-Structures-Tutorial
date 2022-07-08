@@ -1,4 +1,5 @@
 
+  
 # Linked Lists
 
 Linked lists are another type of data structure that every developer should be aware of. Linked Lists are lists made out of "nodes". Nodes contain the value to be stored, a next pointer, and a previous pointer. These pointers tell the list which value is next or before in the list. This allows the nodes to be stored anywhere in the system's memory because they simply give directions to the next or previous value.
@@ -238,6 +239,17 @@ def __str__(self):
 ```
 That's everything! Once all of this code is put together you should have a fully operational Linked List class which will allow you to solve the problem to solve below. Keep in mind that this is a fairly advanced linked list. Some implementations will not require this amount of functionality, so you can pick and choose what you need. In fact some Linked Lists only contain next pointers, this is actually a doubly Linked List because it contains next and previous pointers.
 # Example
+**Aquarium Tracker Program**
+The aquarium tracker is simple program utilizing linked lists to keep track of the amount of fish in an aquarium. I chose to use a linked list for this program since the Aquarium will not know how many fish it will have to keep track of at first. 
+
+**The Program Must**
+* Loop through a menu.
+* Allow users to add a type of fish.
+* Allow users to add to the quantity of fish.
+* Allow users to remove from the qauntity of fish.
+* Allow users to remove a type of fish
+* Display all the fish and their quantitites.
+* Allow users to quit the program
 
 ```python
 import LinkedList as LL
