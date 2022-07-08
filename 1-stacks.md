@@ -61,8 +61,8 @@ stack.append("C") # C is added
 ```
 Also be sure to remember that, as is usual with programming, there a many more ways to implement a stack, including using a linked list instead of a regualr list! However for this tutorial will will just be learning the basics and this is the most basic way to implement a stack.
 #  Code Example
-
-For an example, I've created the shopping list program below. The requirements of the program are listed below.
+**Shopping List Program**
+The shopping list program is a simple program that allows users to add items to a shopping list, and undo the last addition they made. This is in order to keep track of what they need to buy, and it allows them to remove the last item in the case of typos.
 
 **The Program Must**
 * Loop through a menu.
@@ -114,7 +114,7 @@ if __name__ == "__main__":
 
 The navigate home program is a simple program that finds a set of directions to navigate someone home based on the directions they took to get there. The program will add a location to a stack everytime it is reached and then when it is time to return home, the program will reverse the order of those locations in order to lead the user home. In a real program there would also be a system to track the user's location, but for this program we will simply have the enter it.
 
-The program will need to be able to:
+**The Program Must**
 * Display a menu with options to add a location, undo the last location, take the user home, and quit
 * Loop the menu until  the user quits or selects the take home option.
 * Take user input for locations
