@@ -11,9 +11,8 @@
 * Problem to Solve
 ## III. Linked Lists
 * Introduction
-* Common Uses of Linked Lists
+* Why Use a Linked List
 * Components of a Linked List
-* Operations of a Linked List
 * Creating a Linked List
 * Example
 * Problem to Solve
