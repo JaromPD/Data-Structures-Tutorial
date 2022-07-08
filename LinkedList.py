@@ -75,7 +75,7 @@ class LinkedList:
             curr = curr.next
 
     def replace(self, old_value, new_value):
-        curr_value = self.head
+        curr = self.head
         while curr is not None:
             if curr.data == old_value:
                 curr.data = new_value
