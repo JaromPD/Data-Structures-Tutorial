@@ -320,9 +320,9 @@ On your own try to create a music ranking program. This program will allow a use
 * Display a menu to Add, Remove, and View Songs
 * Display a secondary menu to ask where to add the song.
 * The user must be able to add a song:
-1. at the beginning of the list
-2. at the end of the list
-3. after a specified song
+	* at the beginning of the list
+	* at the end of the list
+	* after a specified song
 * The user must be able to view an ordered list of songs in both menus.
 
-Once you have created your own program, feel free to check your solution with [mine]()
+Once you have created your own program, feel free to check your solution with [mine](https://github.com/JaromPD/Data-Structures-Tutorial/blob/main/music_ranker.py).
