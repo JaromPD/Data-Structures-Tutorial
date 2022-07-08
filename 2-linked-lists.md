@@ -236,7 +236,68 @@ def __str__(self):
 	output += "]"
 	return output
 ```
-That's everything! Once all of this code is put together you should have a fully operational Linked List class which will allow you to accomplish the problem to solve below. Just be sure to look at the example first!
+That's everything! Once all of this code is put together you should have a fully operational Linked List class which will allow you to solve the problem to solve below. Keep in mind that this is a fairly advanced linked list. Some implementations will not require this amount of functionality, so you can pick and choose what you need. In fact some Linked Lists only contain next pointers, this is actually a doubly Linked List because it contains next and previous pointers.
 # Example
 
+```
+import LinkedList as LL
+
+def main():
+    menu = True
+    fish_list = LL.LinkedList()
+
+    while menu == True:
+        print("""
+        1. Add type of fish
+        2. Add fish
+        3. Remove fish
+        4. Remove type of fish
+        5. Print all fish
+        6. Quit
+        """)
+
+        choice = input("Enter your choice: ")
+        if choice == "1":
+            fish = input("Enter a fish: ")
+            amount = input("Quantity: ")
+            fish_list.insert_tail([fish, amount])
+
+        elif choice == "2":
+            fish = input("Fish to add to: ")
+            amount = input("Quantity to add: ")
+            for fish_data in fish_list:
+                if fish_data[0] == fish:
+                    fish_data[1] = int(fish_data[1]) + int(amount)
+                    break
+
+        elif choice == "3":
+            fish = input("Fish to remove from: ")
+            amount = input("Quantity to remove: ")
+            for fish_data in fish_list:
+                if fish_data[0] == fish:
+                    fish_data[1] = int(fish_data[1]) - int(amount)
+                    if fish_data[1] <= 0:
+                        fish_list.remove(fish_data)
+                        print("Removed " + fish + " from the list!")
+                    break
+
+        elif choice == "4":
+            fish = input("Fish to remove: ")
+            for fish_data in fish_list:
+                if fish_data[0] == fish:
+                    fish_list.remove(fish_data)
+                    break
+
+        elif choice == "5":
+            for fish_data in fish_list:
+                print(fish_data[0] + ": " + fish_data[1])
+
+        elif choice == "6":
+            menu = False
+        else:
+            print("Invalid choice")
+
+if __name__ == "__main__":
+    main()
+```
 # Problem to Solve
