@@ -239,7 +239,7 @@ def __str__(self):
 That's everything! Once all of this code is put together you should have a fully operational Linked List class which will allow you to solve the problem to solve below. Keep in mind that this is a fairly advanced linked list. Some implementations will not require this amount of functionality, so you can pick and choose what you need. In fact some Linked Lists only contain next pointers, this is actually a doubly Linked List because it contains next and previous pointers.
 # Example
 
-```
+```python
 import LinkedList as LL
 
 def main():
