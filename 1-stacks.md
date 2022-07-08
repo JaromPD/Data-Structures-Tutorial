@@ -123,4 +123,4 @@ The program will need to be able to:
 * Reverse the stack using pop.
 * Display the reversed stack to take them home.
 
-This program can be designed in many different ways. [This solution](https://github.com/JaromPD/Data-Structures-Tutorial/blob/main/word-reverser.py) is just one of many. As long as it uses the pop and append methods in a similar way it is most likely done correctly!
+This program can be designed in many different ways. [This solution](https://github.com/JaromPD/Data-Structures-Tutorial/blob/main/navigate_home.py) is just one of many. As long as it uses the pop and append methods in a similar way it is most likely done correctly!
