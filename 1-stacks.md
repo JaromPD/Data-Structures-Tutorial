@@ -62,6 +62,7 @@ stack.append("C") # C is added
 Also be sure to remember that, as is usual with programming, there a many more ways to implement a stack, including using a linked list instead of a regualr list! However for this tutorial will will just be learning the basics and this is the most basic way to implement a stack.
 #  Code Example
 **Shopping List Program**
+
 The shopping list program is a simple program that allows users to add items to a shopping list, and undo the last addition they made. This is in order to keep track of what they need to buy, and it allows them to remove the last item in the case of typos.
 
 **The Program Must**
