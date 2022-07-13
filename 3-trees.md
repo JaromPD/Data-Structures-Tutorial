@@ -1,6 +1,6 @@
 
 # Trees
-Linked lists are the last data structure to be covered in this tutorial, and like everything else we've covered so far, they are vital for future developers to learn. Trees are very similar to Linked Lists because they are also made out of nodes and pointers, but are structured in a very different way. Trees contain nodes with 1 previous pointer and 2 next pointers. The previous pointer points to the previous value, and the 2 next pointers point to 2 possible next values. The leftmost pointer leads to the nodes less than the current node and the rightmost node leads to the nodes more than the current node. 
+Trees are the last data structure to be covered in this tutorial, and like everything else we've covered so far, they are vital for future developers to learn. Trees are very similar to Linked Lists because they are also made out of nodes and pointers, but are structured in a very different way. Trees contain nodes with 1 previous pointer and 2 next pointers. The previous pointer points to the previous value, and the 2 next pointers point to 2 possible next values. The leftmost pointer leads to the nodes less than the current node and the rightmost node leads to the nodes more than the current node. 
 
 Consider the diagram of a tree below. In the example numbers were added in the order: 5, 6, 3, 4, 2, 9, 7, 8, 1.
 
