@@ -1,4 +1,5 @@
 
+
 # Trees
 Linked lists are the last data structure to be covered in this tutorial, and like everything else we've covered so far, they are vital for future developers to learn. Trees are very similar to Linked Lists because they are also made out of nodes and pointers, but are structured in a very different way. Trees contain no previous pointers and 2 next pointers. We call the first node the root, the previous node the parent node, and the 2 next pointers left and right child. In Trees, the nodes do not have pointers that lead to the previous parent node, but there are 2 child pointers that point to the possible left and right child values. In Binary Search Trees, which will be the main type of tree we talk about, the left child pointer leads to the nodes less than the current node and the right child pointer leads to the nodes more than the current node. 
 
@@ -54,17 +55,17 @@ Recursion is a vital part of the Tree. This is because traversing the tree requi
 Like Linked Lists, creating a Tree requires two classes or "objects". These are the BST (Binary Search Tree) and Node objects. We will start by creating both these classes with Node being a subclass of BST.
 ```python
 class BST:
-	class Node:
+    class Node:
 ```
 Now we need to initialize the base values for the Node object. Nodes need at least three member variables, the data, the left child, and the right child.
 
 ```python
 class BST:
-	class Node:
-		def __init__(self, data):
-			self.data = data
-			self.left = None
-			self.right = None
+    class Node:
+        def __init__(self, data):
+            self.data = data
+            self.left = None
+            self.right = None
 ```
 Now the Node object is completed! Easy right? Now it's time to work the Tree's initial member variable which is just the root Node which is initially empty.
 
