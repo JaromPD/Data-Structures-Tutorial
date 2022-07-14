@@ -32,7 +32,7 @@ To explain how these values were added I will explain the first 5 operations of 
 	* 6 is more than 5 so we go right.
 	* The space is empty so we add 6 there.
 3. Add 3.
-	* 3 is less that 5 so we go left.
+	* 3 is less than 5 so we go left.
 	* The space is empty so we add 3 there.
 4. Add 4.
 	* 4 is less than 5 so we go left.
@@ -43,12 +43,12 @@ To explain how these values were added I will explain the first 5 operations of 
 	* 2 is less than 3 so we go left.
 	* The space is empty so we add 2 there.
 # Why Use Trees
-So why do we use Trees in our code? What the difference between trees and something like a Linked List? The main reason is that traversing these Trees is much faster than traversing a linked list. If you look at the diagram above we can see that every value from 1-10 can be accessed in at most 4 steps. Traversing to the value 8 in the Tree is the farthest to reach at 4 steps, whereas in a Linked List it would take 9 steps assuming it was aIso the last value added. That's a lot faster, especially when these data structures get to larger ranges.
+So why do we use Trees in our code? What is the difference between trees and something like a Linked List? The main reason is that traversing these Trees is much faster than traversing a linked list. If you look at the diagram above we can see that every value from 1-10 can be accessed in at most 4 steps. Traversing to the value 8 in the Tree is the farthest to reach at 4 steps, whereas in a Linked List it would take 9 steps assuming it was also the last value added. That's a lot faster, especially when these data structures get to larger ranges.
 
-Another advantage to Trees like the Binary Search Tree is that they are automatically sorted if they are traversed correctly. This is beause they are placed in such a way that all the smaller values will always be on the left side, and all the larger values will always be on the right.
+Another advantage to Trees like the Binary Search Tree is that they are automatically sorted if they are traversed correctly. This is because they are placed in such a way that all the smaller values will always be on the left side, and all the larger values will always be on the right.
 
 # Recursion
-Recursion is a vital part of the Tree. This is because traversing the tree requires many descision between left and right to get to the correct value. When we put these descisions in a recursive loop we are able to easily get to the required node whether we are returning the data within, editing it, or even inserting a new child node to it. As we create the Tree class below each use of recursion will be explained and you will see that nearly all the methods we create will use it in some way.
+Recursion is a vital part of the Tree. This is because traversing the tree requires many decisions between left and right to get to the correct value. When we put these decisions in a recursive loop we are able to easily get to the required node whether we are returning the data within, editing it, or even inserting a new child node to it. As we create the Tree class below each use of recursion will be explained and you will see that nearly all the methods we create will use it in some way.
 
 # Creating a Tree
 Like Linked Lists, creating a Tree requires two classes or "objects". These are the BST (Binary Search Tree) and Node objects. We will start by creating both these classes with Node being a subclass of BST.
@@ -66,7 +66,7 @@ class BST:
 			self.left = None
 			self.right = None
 ```
-Now the Node object is completed! Easy right? Now it's time to work the trees initial member variable which is just the root Node which is initial empty.
+Now the Node object is completed! Easy right? Now it's time to work the Tree's initial member variable which is just the root Node which is initially empty.
 
 ```python
 class BST:
@@ -76,7 +76,7 @@ class BST:
 		self.root = None
 ```
 
-Now that we have the inital variables we can start working on the methods that we use to manipulate and utilize the tree starting with insert.
+Now that we have the initial variables we can start working on the methods that we use to manipulate and utilize the tree starting with insert.
 
 ```insert()``` is a public method that will take data and call the internal ```_insert()``` method that we will create next as long as the new Node wont be the root of the tree.
 ```python
@@ -86,9 +86,9 @@ def insert(self,data)
 	else:
 		self._insert(data, self.root) # _insert() will be created next
 ```
-Now that we have the public insert method we can create the internal ``` _insert()``` which makes more descisions on where the new node will go. This is also the first method that is utilzing recursion to traverse the list.
+Now that we have the public insert method we can create the internal ``` _insert()``` which makes more decisions on where the new node will go. This is also the first method that utilizes recursion to traverse the list.
 
-```_insert``` works by taking the data to be in the Node and the current Node we are comparing to our new Node. Initially the Node to be compared will start as the root of the Tree. We compare the data of the current node to see if it is more or less than our new data. If it is less we check the left side, if it is more we check the right side. If the selected side is empty we have found an empty space to place our new Node! If it isn't we will call the _insert method with the node on the selected side as our new comparison node and the process repeats until an empty space is found.
+```_insert``` works by taking the data to be in the Node and the current Node we are comparing to our new Node. Initially, the Node to be compared will start as the root of the Tree. We compare the data of the current node to see if it is more or less than our new data. If it is less we check the left side, if it is more we check the right side. If the selected side is empty we have found an empty space to place our new Node! If it isn't we will call the _insert method with the node on the selected side as our new comparison node and the process repeats until an empty space is found.
 
 ```python
 def _insert(self, data, node):
@@ -121,7 +121,7 @@ Notice that we pass the root to ```_contains()``` since that is our starting nod
 
 To create the ```_contains()``` method we need to start by taking parameters of the data to search for and the node to check which will start as the root.
 
-This method first checks to see if the Node's data matches the data it's looking for. If it does we've found it and can return True since the tree does contain it. If it doesn't match however we have to check if the searched for data is less or more than the current node. If the found side is None then we know the data is not in the Tree and return False because we would have found it before the end of the branch if it was there. If there is another node then we call the method again on thatt node so that we can do the whole comparison again. This goes on until the value is found or we hit the end of the list
+This method first checks to see if the Node's data matches the data it's looking for. If it does we've found it and can return True since the tree does contain it. If it doesn't match however we have to check if the searched for data is less or more than the current node. If the found side is None then we know the data is not in the Tree and return False because we would have found it before the end of the branch if it was there. If there is another node then we call the method again on that node so that we can do the whole comparison again. This goes on until the value is found or we hit the end of the list
 
 ```python
 def _contains(self, data, node)
@@ -139,14 +139,14 @@ def _contains(self, data, node)
 			else:
 				return self._contains(data.right)
 ```
-Another useful method for the tree is the ```__iter__()``` iteration method. This method allows use to use the Tree inside of loops later. This is a simple function because like ```insert()``` it uses a more complicated method we will create next. In this case it will be ```_traverse_forward()```. All ```__iter__``` does is yield results from```_traverse_forward()``` starting at the root.
+Another useful method for the tree is the ```__iter__()``` iteration method. This method allows us to use the Tree inside of loops later. This is a simple function because like ```insert()``` it uses a more complicated method we will create next. In this case, it will be ```_traverse_forward()```. All ```__iter__``` does is yield results from```_traverse_forward()``` starting at the root.
 
 ```python
 def __iter__():
 	yield from self._traverse_forward(self.root) # Will be created next.
 ```
 
-Next we will create ```_traverse_forward()```. This method always starts by making sure the current node isn't None, because if it is we have hit the end of the branch. If it isn't none we first yield the return of the left side by calling itself again on the left node. We then yield the current node since it is the middle before yielding the return of the function which is being called on the right side now. Together this will iterate throught the tree from least to greatest.
+Next we will create ```_traverse_forward()```. This method always starts by making sure the current node isn't None, because if it is we have hit the end of the branch. If it isn't None we first yield the return of the left side by calling itself again on the left node. We then yield the current node since it is the middle before yielding the return of the function which is being called on the right side now. Together this will iterate through the tree from least to greatest.
 
 ```python
 def _traverse_forward(self, node)
@@ -156,9 +156,9 @@ def _traverse_forward(self, node)
 		yield from self._traverse_forward(node.right)
 ```
 
-Now we will create some methods that are the exact the opposite of the ```__iter__()``` and ```_traverse_forward()```methods we just created. These are  ```__reversed__``` and ```_traverse_backward()```.
+Now we will create some methods that are the exact opposite of the ```__iter__()``` and ```_traverse_forward()```methods we just created. These are  ```__reversed__``` and ```_traverse_backward()```.
 
-```__reversed__()``` allows us to use the tree in loops that are iterating backwards. The only difference is that ```_traverse_backward()``` calls the right side first rather than the left.
+```__reversed__()``` allows us to use the tree in loops that are iterating backward. The only difference is that ```_traverse_backward()``` calls the right side first rather than the left.
 
 ```python
 def __reversed__(self):
@@ -179,7 +179,7 @@ def get_height(self):
 	else:
 		return self._get_height(self.root)
 ```
-The private ```_get_height()``` function starts by returning a 0 if the current Node is None because it has hit the end of a branch. After it checks that the left and right sides of the node are iterated down recursiveley. After that we check which side is long and add one to that side before returning it. All together this recursiveley iterates down the trees branches and returns the length of the longest branch.
+The private ```_get_height()``` function starts by returning a 0 if the current Node is None because it has hit the end of a branch. After it checks that the left and right sides of the node are iterated down recursively. After that, we check which side is long and add one to that side before returning it. All together this recursively iterates down the Trees branches and returns the length of the longest branch.
 
 ```python
 def _get_height(self, node)	
@@ -194,7 +194,7 @@ def _get_height(self, node)
 ```
 
 # Keeping a Balanced Tree
-An important part about keeping the Tree as efficient as possible is by keeping it balanced. Consider a tree with a root of 100 where you added all the numbers below 100 in reverse order. So from 99 to 98 to 97 to 96 and so on. This would create a tree that is basically a Linked List since every value would go on the parent nodes left side. How can we combat this? Well if we already have a sorted list of values to add we can create a function that adds all these values in a way that the Tree is well balanced. This function which is external from the BST class is simply called ```create_bst_from_sorted_list()``` and it does exactly what it says. It creates a balanced BST from a sorted list. 
+An important part of keeping the Tree as efficient as possible is by keeping it balanced. Consider a tree with a root of 100 where you added all the numbers below 100 in reverse order. So from 99 to 98 to 97 to 96 and so on. This would create a tree that is basically a Linked List since every value would go on the parent Node's left side. How can we combat this? Well if we already have a sorted list of values to add we can create a function that adds all these values in a way that the Tree is well balanced. This function which is external to the BST class is simply called ```create_bst_from_sorted_list()``` and it does exactly what it says. It creates a balanced BST from a sorted list. 
 
 ```create_bst_from_sorted_list()``` is a relatively simple functions that relies heavily on the ```_insert_middle()``` function we will create next. 
 
@@ -207,7 +207,7 @@ def create_bst_from_sroted_list(sorted_list):
 
 ```_insert_middle()``` takes the sorted_list, the first index of it, the last index of it, and the bst to insert to. This is also a recursive function as you will see soon.
 
-```insert_middle()``` starts by  checking if the first index is larger than the last index. This is because we know we have added everything when first is more than last. If this does happen the function returns and ends the loop. If this doesn't happen we find the middle value of the sorted list and add it to our tree. We then call the same function on each side of our middle value. This makes two sublists that we can find the next middle values of, and then we do it again, and again, and agains until all the values are added. This helps us create a tree that is balanced and therefore more efficient than one that is unbalanced.
+```insert_middle()``` starts by checking if the first index is larger than the last index. This is because we know we have added everything when first is more than last. If this does happen the function returns and ends the loop. If this doesn't happen we find the middle value of the sorted list and add it to our tree. We then call the same function on each side of our middle value. This makes two sublists that we can find the next middle values of, and then we do it again, and again, and again until all the values are added. This helps us create a tree that is balanced and therefore more efficient than one that is unbalanced.
 ```python
 def _insert_middle(sorted_list, first, last, bst)
 	if first > last:
