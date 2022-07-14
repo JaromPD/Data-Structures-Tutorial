@@ -71,10 +71,10 @@ Now the Node object is completed! Easy right? Now it's time to work the Tree's i
 
 ```python
 class BST:
-	class Node:
-		... # Node methods hidden
-	def __init__(self)
-		self.root = None
+    class Node:
+        ... # Node methods hidden
+    def __init__(self)
+        self.root = None
 ```
 
 Now that we have the initial variables we can start working on the methods that we use to manipulate and utilize the tree starting with insert.
@@ -82,10 +82,10 @@ Now that we have the initial variables we can start working on the methods that 
 ```insert()``` is a public method that will take data and call the internal ```_insert()``` method that we will create next as long as the new Node wont be the root of the tree.
 ```python
 def insert(self,data)
-	if self.root is None:
-		self.root = BST.Node(data)
-	else:
-		self._insert(data, self.root) # _insert() will be created next
+    if self.root is None:
+        self.root = BST.Node(data)
+    else:
+        self._insert(data, self.root) # _insert() will be created next
 ```
 Now that we have the public insert method we can create the internal ``` _insert()``` which makes more decisions on where the new node will go. This is also the first method that utilizes recursion to traverse the list.
 
@@ -93,19 +93,19 @@ Now that we have the public insert method we can create the internal ``` _insert
 
 ```python
 def _insert(self, data, node):
-	if node.data != data:
-		if data < node.data:
-			if node.left is None:
-				node.left = BST.Node(data)
-			else:
-				self.insert(data.node.left)
-		else:
-			if node.right is None:
-				node.right = BST.Node(data)
-			else:
-				self._insert(data, node.right)
-	else:
-		pass # May be a good spot for an error message. 
+    if node.data != data:
+        if data < node.data:
+            if node.left is None:
+                node.left = BST.Node(data)
+            else:
+                self.insert(data.node.left)
+        else:
+            if node.right is None:
+                node.right = BST.Node(data)
+            else:
+                self._insert(data, node.right)
+    else:
+        pass # May be a good spot for an error message. 
 ```
 The next method we need is ```__contains__()``` which will be a method to see if our Tree contains a value. We can also use this method outside of the class with the "in" keyword.
 ```python
@@ -116,7 +116,7 @@ To create this we simply need to return the output of the ```_contains()``` meth
 
 ```python
 def __contains(self, data)
-	return self._contains(data, self.root) 
+    return self._contains(data, self.root) 
 ```
 Notice that we pass the root to ```_contains()``` since that is our starting node. 
 
@@ -126,35 +126,35 @@ This method first checks to see if the Node's data matches the data it's looking
 
 ```python
 def _contains(self, data, node)
-	if data == node.data
-		return True
-	else:
-		if data < node.data:
-			if node.left is None:
-				return False
-			else:
-				return self._contains(data, node.left)
-		else:
-			if node.right is None:
-				return False
-			else:
-				return self._contains(data.right)
+    if data == node.data
+        return True
+    else:
+        if data < node.data:
+            if node.left is None:
+                return False
+            else:
+                return self._contains(data, node.left)
+        else:
+            if node.right is None:
+                return False
+            else:
+                return self._contains(data.right)
 ```
 Another useful method for the tree is the ```__iter__()``` iteration method. This method allows us to use the Tree inside of loops later. This is a simple function because like ```insert()``` it uses a more complicated method we will create next. In this case, it will be ```_traverse_forward()```. All ```__iter__``` does is yield results from```_traverse_forward()``` starting at the root.
 
 ```python
 def __iter__():
-	yield from self._traverse_forward(self.root) # Will be created next.
+    yield from self._traverse_forward(self.root) # Will be created next.
 ```
 
 Next we will create ```_traverse_forward()```. This method always starts by making sure the current node isn't None, because if it is we have hit the end of the branch. If it isn't None we first yield the return of the left side by calling itself again on the left node. We then yield the current node since it is the middle before yielding the return of the function which is being called on the right side now. Together this will iterate through the tree from least to greatest.
 
 ```python
 def _traverse_forward(self, node)
-	if node is not None:
-		yield from self._traverse_forward(node.left)
-		yield node.data
-		yield from self._traverse_forward(node.right)
+    if node is not None:
+        yield from self._traverse_forward(node.left)
+        yield node.data
+        yield from self._traverse_forward(node.right)
 ```
 
 Now we will create some methods that are the exact opposite of the ```__iter__()``` and ```_traverse_forward()```methods we just created. These are  ```__reversed__``` and ```_traverse_backward()```.
@@ -163,35 +163,35 @@ Now we will create some methods that are the exact opposite of the ```__iter__()
 
 ```python
 def __reversed__(self):
-	yield from self._traverse_backward(self.root)
+    yield from self._traverse_backward(self.root)
 
 def _traverse_backward(self, node):
-	if node is not None:
-		yield from self._traverse_backward(node.right)
-		yield node.data
-		yield from self._traverse_backward(node.left)
+    if node is not None:
+        yield from self._traverse_backward(node.right)
+        yield node.data
+        yield from self._traverse_backward(node.left)
 ```
 For the last BST methods we will include ```get_height()``` and ```_get_height()```. These functions find the largest branch of the tree and return an integer value representing it. The public function will check to see if it is an empty tree and return 0 if that is the case, and if it isn't it will call the private function starting at the root.
 
 ```python
 def get_height(self):
-	if self.root is None:
-		return 0
-	else:
-		return self._get_height(self.root)
+    if self.root is None:
+        return 0
+    else:
+        return self._get_height(self.root)
 ```
 The private ```_get_height()``` function starts by returning a 0 if the current Node is None because it has hit the end of a branch. After it checks that the left and right sides of the node are iterated down recursively. After that, we check which side is long and add one to that side before returning it. All together this recursively iterates down the Trees branches and returns the length of the longest branch.
 
 ```python
 def _get_height(self, node)	
-	if node == None
-		return 0
-	left_side = self._get_height(node.left)
-	right_side = self._get_height(node.right)
-	if left_side > right_side:
-		return left_side + 1
-	else:
-		return right_side + 1 
+    if node == None
+        return 0
+    left_side = self._get_height(node.left)
+    right_side = self._get_height(node.right)
+    if left_side > right_side:
+        return left_side + 1
+    else:
+        return right_side + 1 
 ```
 
 # Keeping a Balanced Tree
@@ -201,9 +201,9 @@ An important part of keeping the Tree as efficient as possible is by keeping it 
 
 ```python
 def create_bst_from_sroted_list(sorted_list):
-	bst = BST()
-	_insert_middle(sorted_list, 0, len(sorted_list) - 1, bst)
-	return bst
+    bst = BST()
+    _insert_middle(sorted_list, 0, len(sorted_list) - 1, bst)
+    return bst
 ```
 
 ```_insert_middle()``` takes the sorted_list, the first index of it, the last index of it, and the bst to insert to. This is also a recursive function as you will see soon.
@@ -211,13 +211,13 @@ def create_bst_from_sroted_list(sorted_list):
 ```insert_middle()``` starts by checking if the first index is larger than the last index. This is because we know we have added everything when first is more than last. If this does happen the function returns and ends the loop. If this doesn't happen we find the middle value of the sorted list and add it to our tree. We then call the same function on each side of our middle value. This makes two sublists that we can find the next middle values of, and then we do it again, and again, and again until all the values are added. This helps us create a tree that is balanced and therefore more efficient than one that is unbalanced.
 ```python
 def _insert_middle(sorted_list, first, last, bst)
-	if first > last:
-		return
-	else:
-		middle_i = ((last-first)//2) + first
-		bst.insert(sorted_list[middle_i])
-		_insert_middle(sorted_list, first, middle_i - 1, bst)
-		_insert_middle(sorted_list, first, middle_i + 1, bst)
+    if first > last:
+        return
+    else:
+        middle_i = ((last-first)//2) + first
+        bst.insert(sorted_list[middle_i])
+        _insert_middle(sorted_list, first, middle_i - 1, bst)
+        _insert_middle(sorted_list, first, middle_i + 1, bst)
 ```
 # Example
  
