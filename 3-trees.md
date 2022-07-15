@@ -73,7 +73,7 @@ Now the Node object is completed! Easy right? Now it's time to work the Tree's i
 class BST:
     class Node:
         ... # Node methods hidden
-    def __init__(self)
+    def __init__(self):
         self.root = None
 ```
 
@@ -81,11 +81,11 @@ Now that we have the initial variables we can start working on the methods that 
 
 ```insert()``` is a public method that will take data and call the internal ```_insert()``` method that we will create next as long as the new Node wont be the root of the tree.
 ```python
-def insert(self,data)
+def insert(self,data):
     if self.root is None:
         self.root = BST.Node(data)
     else:
-        self._insert(data, self.root) # _insert() will be created next
+        self._insert(data, self.root) # _insert() will be created next.
 ```
 Now that we have the public insert method we can create the internal ``` _insert()``` which makes more decisions on where the new node will go. This is also the first method that utilizes recursion to traverse the list.
 
@@ -115,7 +115,7 @@ If 5 in my_tree
 To create this we simply need to return the output of the ```_contains()``` method we will be creating next. 
 
 ```python
-def __contains(self, data)
+def __contains(self, data):
     return self._contains(data, self.root) 
 ```
 Notice that we pass the root to ```_contains()``` since that is our starting node. 
@@ -125,8 +125,8 @@ To create the ```_contains()``` method we need to start by taking parameters of 
 This method first checks to see if the Node's data matches the data it's looking for. If it does we've found it and can return True since the tree does contain it. If it doesn't match however we have to check if the searched for data is less or more than the current node. If the found side is None then we know the data is not in the Tree and return False because we would have found it before the end of the branch if it was there. If there is another node then we call the method again on that node so that we can do the whole comparison again. This goes on until the value is found or we hit the end of the list
 
 ```python
-def _contains(self, data, node)
-    if data == node.data
+def _contains(self, data, node):
+    if data == node.data:
         return True
     else:
         if data < node.data:
@@ -143,14 +143,14 @@ def _contains(self, data, node)
 Another useful method for the tree is the ```__iter__()``` iteration method. This method allows us to use the Tree inside of loops later. This is a simple function because like ```insert()``` it uses a more complicated method we will create next. In this case, it will be ```_traverse_forward()```. All ```__iter__``` does is yield results from```_traverse_forward()``` starting at the root.
 
 ```python
-def __iter__():
+def __iter__(self):
     yield from self._traverse_forward(self.root) # Will be created next.
 ```
 
 Next we will create ```_traverse_forward()```. This method always starts by making sure the current node isn't None, because if it is we have hit the end of the branch. If it isn't None we first yield the return of the left side by calling itself again on the left node. We then yield the current node since it is the middle before yielding the return of the function which is being called on the right side now. Together this will iterate through the tree from least to greatest.
 
 ```python
-def _traverse_forward(self, node)
+def _traverse_forward(self, node):
     if node is not None:
         yield from self._traverse_forward(node.left)
         yield node.data
@@ -183,8 +183,8 @@ def get_height(self):
 The private ```_get_height()``` function starts by returning a 0 if the current Node is None because it has hit the end of a branch. After it checks that the left and right sides of the node are iterated down recursively. After that, we check which side is long and add one to that side before returning it. All together this recursively iterates down the Trees branches and returns the length of the longest branch.
 
 ```python
-def _get_height(self, node)	
-    if node == None
+def _get_height(self, node):
+    if node == None:
         return 0
     left_side = self._get_height(node.left)
     right_side = self._get_height(node.right)
@@ -200,7 +200,7 @@ An important part of keeping the Tree as efficient as possible is by keeping it 
 ```create_bst_from_sorted_list()``` is a relatively simple functions that relies heavily on the ```_insert_middle()``` function we will create next. 
 
 ```python
-def create_bst_from_sroted_list(sorted_list):
+def create_bst_from_sorted_list(sorted_list):
     bst = BST()
     _insert_middle(sorted_list, 0, len(sorted_list) - 1, bst)
     return bst
@@ -223,4 +223,15 @@ def _insert_middle(sorted_list, first, last, bst)
  
 
 # Problem to Solve
+**Lottery Number Program**
+On your own create a Lottery Number Program. Imagine there is a lottery with 100 winners out of 100,000 entries. Every entry is given the number of entries as their entry number (ie. entrant 530 gets the number 530.). The program must select 100 winners randomly and store these winning numbers in a tree. The program then must generate a sorted list so that the earlier entrants get their prize first.
 
+**The Program Must**
+* Have a looping menu with options to:
+	* Roll for Winners.
+	* Sort Winners.
+	* Display winning numbers.
+* The menu must also display if winners have been selected already, but still let the user re-roll.
+* Randomly select 100 numbers from a range of 1 - 100,000
+* Use a Binary Search Tree for storing winners
+* Use the BST to sort the winners.
