@@ -218,7 +218,7 @@ def _insert_middle(sorted_list, first, last, bst)
         middle_i = ((last-first)//2) + first
         bst.insert(sorted_list[middle_i])
         _insert_middle(sorted_list, first, middle_i - 1, bst)
-        _insert_middle(sorted_list, first, middle_i + 1, bst)
+        _insert_middle(sorted_list, middle_i + 1, last, bst)
 ```
 # Example
  
