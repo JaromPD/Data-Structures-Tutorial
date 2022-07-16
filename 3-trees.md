@@ -81,7 +81,7 @@ Now that we have the initial variables we can start working on the methods that 
 
 ```insert()``` is a public method that will take data and call the internal ```_insert()``` method that we will create next as long as the new Node wont be the root of the tree.
 ```python
-def insert(self,data):
+def insert(self, data):
     if self.root is None:
         self.root = BST.Node(data)
     else:
@@ -98,7 +98,7 @@ def _insert(self, data, node):
             if node.left is None:
                 node.left = BST.Node(data)
             else:
-                self.insert(data.node.left)
+                self._insert(data, node.left)
         else:
             if node.right is None:
                 node.right = BST.Node(data)
@@ -115,7 +115,7 @@ If 5 in my_tree
 To create this we simply need to return the output of the ```_contains()``` method we will be creating next. 
 
 ```python
-def __contains(self, data):
+def __contains__(self, data):
     return self._contains(data, self.root) 
 ```
 Notice that we pass the root to ```_contains()``` since that is our starting node. 
@@ -224,14 +224,13 @@ def _insert_middle(sorted_list, first, last, bst)
 
 # Problem to Solve
 **Lottery Number Program**
-On your own create a Lottery Number Program. Imagine there is a lottery with 100 winners out of 100,000 entries. Every entry is given the number of entries as their entry number (ie. entrant 530 gets the number 530.). The program must select 100 winners randomly and store these winning numbers in a tree. The program then must generate a sorted list so that the earlier entrants get their prize first.
+On your own create a Lottery Number Program. Imagine there is a lottery that selects a given amount of winners from a given amount of entries. Every entry is given the number of entries as their entry number (ie. entrant 530 gets the number 530.). The program must select the given amount of winners randomly and store these winning numbers in a tree. The program then must generate a sorted list so that the earlier entrants get their prize first.
 
 **The Program Must**
+* Take an amount of winners and entrants.
+* Roll for random winners from the amount of entrants.
 * Have a looping menu with options to:
-	* Roll for Winners.
-	* Sort Winners.
+	* Re-Roll Winners.
 	* Display winning numbers.
-* The menu must also display if winners have been selected already, but still let the user re-roll.
-* Randomly select 100 numbers from a range of 1 - 100,000
-* Use a Binary Search Tree for storing winners
-* Use the BST to sort the winners.
+	* Use a Binary Search Tree for storing winners.
+* Use the BST to display the winners from earliest to latest (least to greatest).
