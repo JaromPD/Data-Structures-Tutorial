@@ -85,7 +85,6 @@ def create_bst_from_sorted_list(sorted_list):
     bst = BST()
     _insert_middle(sorted_list, 0, len(sorted_list) - 1, bst)
     return bst
-
 def _insert_middle(sorted_list, first, last, bst):
     if first > last:
         return
@@ -93,4 +92,4 @@ def _insert_middle(sorted_list, first, last, bst):
         middle_i = ((last-first)//2) + first
         bst.insert(sorted_list[middle_i])
         _insert_middle(sorted_list, first, middle_i - 1, bst)
-        _insert_middle(sorted_list, first, middle_i + 1, bst)
+        _insert_middle(sorted_list, middle_i + 1, last, bst)
