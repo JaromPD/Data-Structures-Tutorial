@@ -5,6 +5,7 @@ def get_winners(num_of_winners, num_of_entrants):
     winners = bst.BST()
     winners.insert(random.randint(1, num_of_entrants))
     curr_winners_amount = 1
+    
     while curr_winners_amount < num_of_winners:
         winner = random.randint(1, num_of_entrants)
         if winner not in winners:
@@ -21,7 +22,6 @@ def main():
     print("\n")
 
     while menu == True:
-        
         if amount_of_winners > amount_of_entrants:
             print("There are not enough entrants to pick that many winners!")
             break
@@ -30,7 +30,6 @@ def main():
             break
 
         winners = get_winners(amount_of_winners, amount_of_entrants)
-
         print("Winners have been selected!\n")
 
         print("What would you like to do?\n    1. Re-roll for winners\n    2. Print Winners\n    3. Quit")
