@@ -3,8 +3,9 @@ import BST as bst
 
 def get_winners(num_of_winners, num_of_entrants):
     winners = bst.BST()
-    curr_winners_amount = 0
-    while curr_winners_amount != num_of_winners:
+    winners.insert(random.randint(1, num_of_entrants))
+    curr_winners_amount = 1
+    while curr_winners_amount < num_of_winners:
         winner = random.randint(1, num_of_entrants)
         if winner not in winners:
             curr_winners_amount += 1
@@ -20,9 +21,13 @@ def main():
     print("\n")
 
     while menu == True:
+        
         if amount_of_winners > amount_of_entrants:
             print("There are not enough entrants to pick that many winners!")
-            menu = False
+            break
+        elif amount_of_winners == 0:
+            print("There are no winners!")
+            break
 
         winners = get_winners(amount_of_winners, amount_of_entrants)
 
