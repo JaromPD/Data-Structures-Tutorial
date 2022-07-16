@@ -222,7 +222,7 @@ def _insert_middle(sorted_list, first, last, bst)
 ```
 # Example
  **Marathon Tracker**
-The marathon tracker is a simple program to keep track of the numbers of entrants in the marathon. The program takes the entrants number to add them to the runners tree. The program also is able to display all the runners, set the podium and display the podium. There is also an option to balance when needed to keep the tree efficient.  
+The marathon tracker is a simple program to keep track of the numbers of entrants in the marathon. The program takes the entrants number to add them to the runners tree. The program also is able to display all the runners, set the podium and display the podium. There is also an option to balance when needed to keep the tree efficient. This program uses the [BST](https://github.com/JaromPD/Data-Structures-Tutorial/blob/main/BST.py) class we made earlier and the function create_bst_from_sorted_list.
 
 **The Program Must**
 * Loop through a menu.
