@@ -1,5 +1,6 @@
 
 
+
 # Trees
 Linked lists are the last data structure to be covered in this tutorial, and like everything else we've covered so far, they are vital for future developers to learn. Trees are very similar to Linked Lists because they are also made out of nodes and pointers, but are structured in a very different way. Trees contain no previous pointers and 2 next pointers. We call the first node the root, the previous node the parent node, and the 2 next pointers left and right child. In Trees, the nodes do not have pointers that lead to the previous parent node, but there are 2 child pointers that point to the possible left and right child values. In Binary Search Trees, which will be the main type of tree we talk about, the left child pointer leads to the nodes less than the current node and the right child pointer leads to the nodes more than the current node. 
 
@@ -79,7 +80,7 @@ class BST:
 
 Now that we have the initial variables we can start working on the methods that we use to manipulate and utilize the tree starting with insert.
 
-```insert()``` is a public method that will take data and call the internal ```_insert()``` method that we will create next as long as the new Node wont be the root of the tree.
+```insert()``` is a public method that will take data and call the internal ```_insert()``` method that we will create next as long as the new Node won't be the root of the tree.
 ```python
 def insert(self, data):
     if self.root is None:
@@ -224,14 +225,14 @@ def _insert_middle(sorted_list, first, last, bst)
 
 # Problem to Solve
 **Lottery Number Program**
-On your own create a Lottery Number Program. Imagine there is a lottery that selects a given amount of winners from a given amount of entries. Every entry is given the number of entries as their entry number (ie. entrant 530 gets the number 530.). The program must select the given amount of winners randomly and store these winning numbers in a tree. The program then must generate a sorted list so that the earlier entrants get their prize first. The reason why we would use a Tree for this is due to the high amount of entrants possible. This way we can access each entrant quickly, and we can automatically displayed the sorted. 
+On your own create a Lottery Number Program. Imagine there is a lottery that selects a given amount of winners from a given amount of entries. Every entry is given the number of entries as their entry number (ie. entrant 530 gets the number 530.). The program must select the given amount of winners randomly and store these winning numbers in a tree. The program then must generate a sorted list so that the earlier entrants get their prize first. The reason why we would use a Tree for this is due to the high amount of entrants possible. This way we can access each entrant quickly, and we can automatically display the sorted winners. 
 
 You are able to use the BST we created earlier [here](https://github.com/JaromPD/Data-Structures-Tutorial/blob/main/BST.py).
 
 **The Program Must**
-* Take an amount of winners and entrants.
-* Roll for random winners from the amount of entrants.
-* Make sure it isnt selecting the same winner multiple times.
+* Take a number of winners and entrants.
+* Roll for random winners from the number of entrants.
+* Make sure it isn't selecting the same winner multiple times.
 * Have a looping menu with options to:
 	* Re-Roll Winners.
 	* Display winning numbers.
