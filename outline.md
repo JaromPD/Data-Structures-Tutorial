@@ -18,8 +18,8 @@
 * Problem to Solve
 ## IV. Trees
 * Introduction
-* Common uses of Trees
-* Structure of a Tree
+* Why Use Trees
+* Recursion
 * Creating a Tree
 * Keeping a Balanced Tree
 * Example
