@@ -8,7 +8,7 @@ class BST:
     def __init__(self):
         self.root = None
 
-    def insert(self,data):
+    def insert(self, data):
         if self.root is None:
             self.root = BST.Node(data)
         else:
@@ -20,7 +20,7 @@ class BST:
                 if node.left is None:
                     node.left = BST.Node(data)
                 else:
-                    self.insert(data.node.left)
+                    self._insert(data, node.left)
             else:
                 if node.right is None:
                     node.right = BST.Node(data)
