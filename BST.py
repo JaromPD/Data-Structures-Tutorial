@@ -45,7 +45,7 @@ class BST:
                 if node.right is None:
                     return False
                 else:
-                    return self._contains(data.right)
+                    return self._contains(data, node.right)
     
     def __iter__(self):
         yield from self._traverse_forward(self.root) # Will be created next.
