@@ -44,7 +44,7 @@ To explain how these values were added I will explain the first 5 operations of 
 	* 2 is less than 3 so we go left.
 	* The space is empty so we add 2 there.
 # Why Use Trees
-So why do we use Trees in our code? What is the difference between trees and something like a Linked List? The main reason is that traversing these Trees is much faster than traversing a linked list. If you look at the diagram above we can see that every value from 1-10 can be accessed in at most 4 steps. Traversing to the value 8 in the Tree is the farthest to reach at 4 steps, whereas in a Linked List it would take 9 steps assuming it was also the last value added. That's a lot faster, especially when these data structures get to larger ranges.
+So why do we use Trees in our code? What is the difference between trees and something like a Linked List? The main reason is that traversing these Trees is much faster than traversing a linked list. If you look at the diagram above we can see that every value from 1-10 can be accessed in at most 4 steps. Traversing to the value 8 in the Tree is the farthest to reach at 4 steps, whereas in a Linked List it would take 9 steps assuming it was also the last value added. So while both have an algorithmic efficiency of O(N), Trees are still significantly faster, especially when these data structures get to larger ranges.
 
 Another advantage to Trees like the Binary Search Tree is that they are automatically sorted if they are traversed correctly. This is because they are placed in such a way that all the smaller values will always be on the left side, and all the larger values will always be on the right.
 
