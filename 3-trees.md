@@ -224,11 +224,14 @@ def _insert_middle(sorted_list, first, last, bst)
 
 # Problem to Solve
 **Lottery Number Program**
-On your own create a Lottery Number Program. Imagine there is a lottery that selects a given amount of winners from a given amount of entries. Every entry is given the number of entries as their entry number (ie. entrant 530 gets the number 530.). The program must select the given amount of winners randomly and store these winning numbers in a tree. The program then must generate a sorted list so that the earlier entrants get their prize first. You are able to use the BST we created earlier [here](https://github.com/JaromPD/Data-Structures-Tutorial/blob/main/BST.py).
+On your own create a Lottery Number Program. Imagine there is a lottery that selects a given amount of winners from a given amount of entries. Every entry is given the number of entries as their entry number (ie. entrant 530 gets the number 530.). The program must select the given amount of winners randomly and store these winning numbers in a tree. The program then must generate a sorted list so that the earlier entrants get their prize first. The reason why we would use a Tree for this is due to the high amount of entrants possible. This way we can access each entrant quickly, and we can automatically displayed the sorted. 
+
+You are able to use the BST we created earlier [here](https://github.com/JaromPD/Data-Structures-Tutorial/blob/main/BST.py).
 
 **The Program Must**
 * Take an amount of winners and entrants.
 * Roll for random winners from the amount of entrants.
+* Make sure it isnt selecting the same winner multiple times.
 * Have a looping menu with options to:
 	* Re-Roll Winners.
 	* Display winning numbers.
