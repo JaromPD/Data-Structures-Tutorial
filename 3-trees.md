@@ -138,7 +138,7 @@ def _contains(self, data, node):
             if node.right is None:
                 return False
             else:
-                return self._contains(data.right)
+                return self._contains(data, node.right)
 ```
 Another useful method for the tree is the ```__iter__()``` iteration method. This method allows us to use the Tree inside of loops later. This is a simple function because like ```insert()``` it uses a more complicated method we will create next. In this case, it will be ```_traverse_forward()```. All ```__iter__``` does is yield results from```_traverse_forward()``` starting at the root.
 
