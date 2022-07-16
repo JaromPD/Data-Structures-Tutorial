@@ -221,7 +221,98 @@ def _insert_middle(sorted_list, first, last, bst)
         _insert_middle(sorted_list, middle_i + 1, last, bst)
 ```
 # Example
- 
+ **Marathon Tracker**
+The marathon tracker is a simple program to keep track of the numbers of entrants in the marathon. The program takes the entrants number to add them to the runners tree. The program also is able to display all the runners, set the podium and display the podium. There is also an option to balance when needed to keep the tree efficient.  
+
+**The Program Must**
+* Loop through a menu.
+* Allow runner's number to be added to a tree.
+    * Check that each number added is unique.
+* Display all the runner's numbers
+* Have an option to balance the tree.
+* Allow the podium to be set.
+    * Make sure each podium winner is an entrant.
+* Display the podium
+
+ ```python
+ def main():
+
+    menu = True
+    runners = BST()
+    podium = {}
+    print("Marathon Tracker:")
+
+    while menu == True:
+        print("What would you like to do?\n    1. Add a runner\n    2. Display runners\n    3. Balance Tree\n    4. Set podium.\n    5. Display podium.\n    6. Exit")
+        choice = input("> ") 
+
+        if choice == "1":
+            runner_number = input("Runner number: ")
+
+            if runners.get_height() == 0:
+                runners.insert(runner_number)
+            else:
+                if runner_number in runners:
+                    print("Runner number already exists.")
+                else:
+                    runners.insert(runner_number)
+                    print(f"Runner {runner_number} added.") 
+
+        elif choice == "2":
+            runner_count = 0
+            for runner in runners:
+                print(runner)
+                runner_count += 1
+
+            print(f"\nThere are {runner_count} runners.")
+        
+        elif choice == "3":
+
+            print(f"Current Height: {runners.get_height()}")
+
+            runners_sorted = []
+            for runner in runners:
+                runners_sorted.append(runner)
+
+            balanced_runners = create_bst_from_sorted_list(runners_sorted)
+            runners = balanced_runners
+
+            print(f"New Height: {runners.get_height()}")
+
+        elif choice == "4":
+            first_place = input("First place: ")
+            second_place = input("Second place: ") 
+            third_place = input("Third place: ")
+            if first_place in runners:
+                podium[first_place] = 1
+            else:
+                print(f"{first_place} is not a runner.")
+            if second_place in runners:
+                podium[second_place] = 2
+            else:
+                print(f"{second_place} is not a runner.")
+            if third_place in runners:
+                podium[third_place] = 3
+            else:
+                print(f"{third_place} is not a runner.")
+            podium = {first_place: 1, second_place: 2, third_place: 3}
+
+            print("Podium set.")
+        
+        elif choice == "5":
+            print("\nPodium:")
+            print(f"First place: {podium[first_place]}")
+            print(f"Second place: {podium[second_place]}")
+            print(f"Third place: {podium[third_place]}")
+
+        elif choice == "6":
+            menu = False
+            print("\nGoodbye!")
+
+
+if __name__ == "__main__":
+    main()
+ ```
 
 # Problem to Solve
 **Lottery Number Program**
