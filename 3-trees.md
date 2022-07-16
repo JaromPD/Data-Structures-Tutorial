@@ -122,7 +122,7 @@ Notice that we pass the root to ```_contains()``` since that is our starting nod
 
 To create the ```_contains()``` method we need to start by taking parameters of the data to search for and the node to check which will start as the root.
 
-This method first checks to see if the Node's data matches the data it's looking for. If it does we've found it and can return True since the tree does contain it. If it doesn't match however we have to check if the searched for data is less or more than the current node. If the found side is None then we know the data is not in the Tree and return False because we would have found it before the end of the branch if it was there. If there is another node then we call the method again on that node so that we can do the whole comparison again. This goes on until the value is found or we hit the end of the list
+This method first checks to see if the Node's data matches the data it's looking for. If it does we've found it and can return True since the tree does contain it. If it doesn't match however we have to check if the searched for data is less or more than the current node. If the found side is None then we know the data is not in the Tree and return False because we would have found it before the end of the branch if it was there. If there is another node then we call the method again on that node so that we can do the whole comparison again. This goes on until the value is found or we hit the end of the list.
 
 ```python
 def _contains(self, data, node):
@@ -224,7 +224,7 @@ def _insert_middle(sorted_list, first, last, bst)
 
 # Problem to Solve
 **Lottery Number Program**
-On your own create a Lottery Number Program. Imagine there is a lottery that selects a given amount of winners from a given amount of entries. Every entry is given the number of entries as their entry number (ie. entrant 530 gets the number 530.). The program must select the given amount of winners randomly and store these winning numbers in a tree. The program then must generate a sorted list so that the earlier entrants get their prize first.
+On your own create a Lottery Number Program. Imagine there is a lottery that selects a given amount of winners from a given amount of entries. Every entry is given the number of entries as their entry number (ie. entrant 530 gets the number 530.). The program must select the given amount of winners randomly and store these winning numbers in a tree. The program then must generate a sorted list so that the earlier entrants get their prize first. You are able to use the BST we created earlier (here)https://github.com/JaromPD/Data-Structures-Tutorial/blob/main/BST.py).
 
 **The Program Must**
 * Take an amount of winners and entrants.
@@ -234,3 +234,5 @@ On your own create a Lottery Number Program. Imagine there is a lottery that sel
 	* Display winning numbers.
 	* Use a Binary Search Tree for storing winners.
 * Use the BST to display the winners from earliest to latest (least to greatest).
+
+Once you have created your own program, feel free to check your solution with [mine](https://github.com/JaromPD/Data-Structures-Tutorial/blob/main/lottery_number_program.py).
