@@ -29,7 +29,7 @@ class BST:
         else:
             pass # May be a good spot for an error message. 
 
-    def __contains(self, data):
+    def __contains__(self, data):
         return self._contains(data, self.root) 
     
     def _contains(self, data, node):
