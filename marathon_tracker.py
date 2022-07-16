@@ -14,15 +14,24 @@ def main():
         choice = input("> ") 
 
         if choice == "1":
-            runners.append(len(runners) + 1)
+            new_runner = len(runners) + 1
+            runners.append(new_runner)
+
+            print(f"Added runner {new_runner}.\n")
 
         elif choice == "2":
             amount_to_add = int(input("How many runners would you like to add: "))
             new_runner_number = len(runners)
-
+            new_runners = []
             for i in range(amount_to_add):
                 new_runner_number += 1
                 runners.append(new_runner_number)
+                new_runners.append(new_runner_number)
+
+            print("Added runners: \n")
+            for runner in new_runners:
+                print(f"{runner}", end=" ")
+            print("\n")
 
         elif choice == "3":
             print(f"There are {len(runners)} runners.\n")
@@ -34,17 +43,18 @@ def main():
             runners_bst = create_bst_from_sorted_list(runners)
 
             print("Who is the first place runner?: ")
-            first_place = input("> ")
+            first_place = int(input("> "))
             print("Who is the second place runner?: ")
-            second_place = input("> ")
+            second_place = int(input("> "))
             print("Who is the third place runner?: ")
-            third_place = input("> ")
+            third_place = int(input("> "))
 
             if first_place in runners and second_place in runners and third_place in runners_bst:
                 podium = {1: first_place, 2: second_place, 3: third_place}
                 print(f"Podium set.")
+                print(podium)
             else:       
-                print("One or more of the runners you entered is not in the list.")
+                print("One or more of the runners you entered is not in the list.\n   Please try again.")
 
         elif choice == "5":
             print(f"The first place runner is {podium[1]}, the second place runner is {podium[2]}, and the third place runner is {podium[3]}.")
